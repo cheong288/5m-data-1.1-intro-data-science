@@ -15,13 +15,21 @@ def fizz_buzz(number):
     >>> fizz_buzz(15)
     'FizzBuzz'
     """
-    return
 
+    x = number
+    if x%3 == 0 and x%5 == 0:
+        return("FizzBuzz")
+    elif x%3 == 0:
+        return("Fizz")
+    elif x%5 == 0:
+        return("Buzz")
+    else:
+        return(x)
+    return
 
 # Question 2
 
 # Write a function that takes a list of numbers and returns the sum of the squares of all the numbers.
-
 
 def sum_of_squares(numbers):
     """Returns the sum of the squares of all the numbers in a list.
@@ -30,8 +38,18 @@ def sum_of_squares(numbers):
     >>> sum_of_squares([2, 4, 6])
     56
     """
-    return
 
+    newsum = []
+
+    for x in numbers:
+        y = x**2
+        newsum.append(y)
+
+    z=0
+    for x in newsum:
+        z += x
+
+    return(z)
 
 # Question 3
 
@@ -45,13 +63,13 @@ def count_vowels(string):
     >>> count_vowels("aeiou")
     5
     """
-    return
 
+    y = string.count("a") + string.count("e") + string.count("i") + string.count("o") + string.count("u")
+    return(y)
 
 # Question 4
 
 # Write a function that counts the number of repeated characters in a string.
-
 
 def count_repeats(string):
     """Returns the number of repeated characters in a string.
@@ -60,8 +78,16 @@ def count_repeats(string):
     >>> count_repeats("aeiou")
     0
     """
-    return
 
+    z = 0
+    y = 0
+    for x in string:
+        if string.count(x) > 1:
+            y = string.count(x)
+        if y > z:
+            z = y
+
+    return(z)
 
 if __name__ == "__main__":
     import doctest
